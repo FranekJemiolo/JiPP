@@ -1,0 +1,15 @@
+/* This example shows that functions can be redeclared in blocks
+   below, and that the previous reference is restored, so that
+   the functions like variables are statically bound */
+main {
+vars:
+    int f(int x) { return x+1; }
+code:
+    {
+    vars:
+        int f(int x) { return x+2;}
+    code:
+        print(f(3));
+    }
+    print(f(3));
+}

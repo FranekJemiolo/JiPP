@@ -1,0 +1,16 @@
+/* Example of block inside of a block. We can see that variables are
+   statically bound. The x from outside block retains it's initial value.*/
+main {
+vars:
+    int x = 0;
+code:
+    {
+    vars:
+        int x = 5;
+    code:
+        print (x);
+        print ("\n");
+    }
+    print(x);
+    print("\n");
+}

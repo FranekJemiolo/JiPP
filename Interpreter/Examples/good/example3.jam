@@ -1,0 +1,8 @@
+/* Example of boolean values */
+main {
+vars:
+    bool someBool = false;
+code:
+    print(someBool);
+    print(!someBool);
+}

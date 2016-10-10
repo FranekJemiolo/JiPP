@@ -1,0 +1,12 @@
+/* This is example of declaring variables int and printing them. */
+/* Also assignment and assignment on declaration */
+main {
+vars:
+    int x = 0;
+    int y = 0;
+code:
+    x = 5;
+    y = x + (2 * 3 + 4);
+    print(x);
+    print(y);
+}

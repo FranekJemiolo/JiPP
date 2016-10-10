@@ -1,0 +1,9 @@
+/* Functions can take multiple parameters  */
+main {
+vars:
+    int f(int x, int y) { return x+y;}
+    int x = 3;
+    int y = 7;
+code:
+    print(f(x,y));
+}

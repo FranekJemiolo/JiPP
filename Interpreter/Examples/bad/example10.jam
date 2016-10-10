@@ -1,0 +1,5 @@
+/* Using vars code syntax without vars */
+main {
+code:
+    print(2+2);
+}

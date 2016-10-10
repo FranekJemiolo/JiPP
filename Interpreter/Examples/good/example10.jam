@@ -1,0 +1,19 @@
+main {
+vars:
+    int suma(int x, int y) { return x + y; }
+    int x = 0;
+    int y = 0;
+code:
+    x++;
+    y--;
+    print(suma(x,y));
+    print("\n");
+    {
+    vars:
+        int suma(int x, int y) { return x + y + 1; }
+    code:
+        print(suma(x,y));
+    }
+    print("\n");
+    print(suma(x,y));
+}

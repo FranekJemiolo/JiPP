@@ -1,0 +1,7 @@
+/* Wrong number of parameters to function */
+main {
+vars:
+    int f(int x, int y) { return x + y; }
+code:
+    f(1);
+}

@@ -1,0 +1,4 @@
+/* Throwing exception without catching it */
+main {
+    Exception("My exception");
+}

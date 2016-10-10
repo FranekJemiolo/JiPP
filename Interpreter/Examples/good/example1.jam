@@ -1,0 +1,4 @@
+/* This is example of print function */
+main {
+    print ("Hello world!");
+}

@@ -1,0 +1,7 @@
+/* Type errors - for now handled in runtime */
+main {
+vars:
+    string x = 2;
+code:
+    print(x);
+}

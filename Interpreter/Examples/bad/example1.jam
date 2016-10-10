@@ -1,0 +1,7 @@
+/* No main block */
+{
+vars:
+    int x = 0;
+code:
+    print(x);
+}

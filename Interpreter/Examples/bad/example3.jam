@@ -1,0 +1,4 @@
+/* Using undeclared function */
+main {
+    print(f(1));
+}

@@ -1,0 +1,23 @@
+/* Example of handling various exceptions */
+main {
+vars:
+    int x = 0;
+code:
+    try {
+        x = x / 0;
+    }
+    /* We will catch exception here */
+    catch (e) {
+        /* Check it's name*/
+        print(e + "\n");
+        if (e == "ZeroDivisionException") {
+            print("OK\n");
+            x = 1;
+        }
+        else {
+            print("WRONG!\n");
+        }
+        fi
+    }
+    print(x);
+}

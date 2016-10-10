@@ -1,0 +1,21 @@
+/* Adding strings works, also multiple params of different types.*/
+/* Declaration of string etc. */
+main {
+vars:
+    int f(int x, bool y) { 
+	if (y) {
+           print(x+1);
+        } else {
+           print(x-1);
+        } fi 
+        return x * 2;
+    }
+    int y = 12;
+    bool b = true;
+    string s = "Some string";
+code:
+    print(f(y,b));
+    print(f(y,!b));
+    print(s);
+    print(s + " Some other string");
+}

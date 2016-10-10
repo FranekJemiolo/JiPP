@@ -1,0 +1,23 @@
+/* Example of comments and while function and if. Plus printing of strings.*/
+/* Strings shown as expressions here. */
+main {
+vars:
+    bool someBool = false;
+    int someInt = 0;
+code:
+    while (!someBool) {
+        if (someInt > 10) {
+            someBool = true;
+        }
+        fi
+        someInt = someInt + 1;
+    }
+    print (someBool);
+    print ("\n");
+    print (someInt);
+    print ("\n");
+    // This is a good comment;
+   /* This is also a good comment*/
+}
+
+# Even here this is a good comment!

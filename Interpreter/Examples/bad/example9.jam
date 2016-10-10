@@ -1,0 +1,4 @@
+/* Another syntax error - no declaration block but using declaration */
+main{
+    int x = 0;
+} 

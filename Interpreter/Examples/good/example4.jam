@@ -1,0 +1,17 @@
+/* This is example of conditional statements (if) */
+main {
+vars:
+    bool someBool;
+    int someInt;
+code:
+    someBool = true;
+    if (someBool) {
+        someInt = 4;
+    }
+    else {
+        someInt = 3;  
+    }
+    fi
+    print (someInt);
+    print (someBool);
+}

@@ -1,0 +1,13 @@
+/* Handling of exceptions */
+main {
+vars:
+    int x = 0;
+code:
+    try {
+        x / 0;
+    }
+    catch (e) {
+        print(e);
+        print("OK");
+    }
+}

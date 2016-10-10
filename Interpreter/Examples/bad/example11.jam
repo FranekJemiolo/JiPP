@@ -1,0 +1,7 @@
+/* Wrong type in if */
+main {
+    if (2+2) {
+        print("NOT OK");
+    }
+    fi
+}

@@ -1,0 +1,16 @@
+/* Another type error trying to add string to a number and assign to int*/
+/* But adding an int to string works! And expression conversions!*/
+main {
+vars:
+    int x = 123;
+    string s = "someString";
+code:
+    print(123 + "someString\n");
+    print("someString" + 123);
+    print("\n");
+    s += x;
+    print(s);
+    print("\n");
+    // This throws error
+    x += s;
+}

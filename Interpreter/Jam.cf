@@ -1,0 +1,155 @@
+-- PROGRAM ---------------------------------------------------------------------
+
+entrypoints Program ;
+
+Main.    Program ::= "main" Block ;
+
+-- STATEMENTS ------------------------------------------------------------------
+
+SBlock.     Block ::= "{" [Stmt] "}" ;
+
+DBlock.     Block ::= "{" "vars" ":" [Decl] "code" ":" [Stmt] "}" ;
+
+Empty.      Stmt ::= ";" ;
+
+BStmt.      Stmt ::= Block ;
+
+Cond.       Stmt ::= "if" "(" Exp ")" Stmt "fi" ;
+
+CondElse.   Stmt ::= "if" "(" Exp ")" Stmt "else" Stmt "fi" ;
+
+While.      Stmt ::= "while" "(" Exp ")" Stmt ;
+
+For.        Stmt ::= "for" "(" Ident "from" Exp "to" Exp ")" Stmt ;
+
+Print.      Stmt ::= "print" "(" Exp ")" ";" ;
+
+Assign.     Stmt ::= Ident "=" Exp ";" ;
+
+AssignInc.  Stmt ::= Ident "+=" Exp ";" ;
+
+AssignDec.  Stmt ::= Ident "-=" Exp ";" ;
+
+Incr.       Stmt ::= Ident "++" ";" ;
+
+Decr.       Stmt ::= Ident "--" ";" ;
+
+Ret.        Stmt ::= "return" Exp ";" ;
+
+Add.        Stmt ::= Ident ".add" "(" Exp ")" ";" ;
+
+Remove.     Stmt ::= Ident ".remove" "(" Exp ")" ";" ;
+
+Insert.     Stmt ::= Ident ".insert" "(" Exp "," Exp ")" ";" ;
+
+Except.     Stmt ::= "Exception" "(" Exp ")" ";" ;
+
+TryCatch.   Stmt ::= "try" Block "catch" "(" Ident ")" Block ;
+
+TDecl.      Decl ::= Type Ident ";" ;
+
+AssDecl.    Decl ::= Type Ident "=" Exp ";" ;
+
+FunDecl.    Decl ::= Type Ident "(" [Arg] ")" Block;
+
+VArg.       Arg ::= Type Ident ;
+
+RArg.       Arg ::= Type "&" Ident ; 
+
+separator   Arg "," ;
+
+SExp.       Stmt ::= Exp ";" ;
+
+separator   Stmt "" ;
+
+separator   Decl "" ;
+
+-- Types -----------------------------------------------------------------------
+
+Int.        OType ::= "int" ;
+
+Str.        OType ::= "string" ;
+
+OrdType.    Type ::= OType ;
+
+Bool.       Type ::= "bool" ;
+
+List.       Type ::= "List<" Type ">" ;
+
+Dictionary. Type ::= "Dictionary<" OType "," Type ">" ;
+
+-- Expressions -----------------------------------------------------------------
+
+EVar.       Exp6 ::= Ident ;
+
+EInt.       Exp6 ::= Integer ;
+
+ETrue.      Exp6 ::= "true" ;
+
+EFalse.     Exp6 ::= "false" ;
+
+EString.    Exp6 ::= String ;
+
+EFirst.     Exp6 ::= Ident ".first" "(" ")" ;
+
+EGet.       Exp6 ::= Ident ".get" "(" Exp ")" ;
+
+ECont.      Exp6 ::= Ident ".contains" "(" ")" ;
+
+EEmpty.     Exp6 ::= Ident ".empty" "(" ")" ;
+
+ESize.      Exp6 ::= Ident ".size" "(" ")" ;
+
+EGetAt.     Exp6 ::= Ident ".getAt" "(" Exp ")" ;
+
+EApp.       Exp6 ::= Ident "(" [Exp] ")" ;
+
+ENeg.       Exp5 ::= "-" Exp6 ;
+
+ENot.       Exp5 ::= "!" Exp6 ;
+
+EMul.       Exp4 ::= Exp4 MulOp Exp5 ;
+
+EAdd.       Exp3 ::= Exp3 AddOp Exp4 ;
+
+ERel.       Exp2 ::= Exp2 RelOp Exp3 ;
+
+EAnd.       Exp1 ::= Exp2 "&&" Exp1 ;
+
+EOr.        Exp ::= Exp1 "||" Exp ;
+
+coercions   Exp 6 ;
+
+separator   Exp "," ;
+
+-- Operators -------------------------------------------------------------------
+
+Plus.       AddOp ::= "+" ;
+
+Minus.      AddOp ::= "-" ;
+
+Mul.        MulOp ::= "*" ;
+
+Div.        MulOp ::= "/" ;
+
+Mod.        MulOp ::= "%" ;
+
+Less.       RelOp ::= "<" ;
+
+LessOrEq.   RelOp ::= "<=" ;
+
+Greater.    RelOp ::= ">" ;
+
+GrtOrEq.    RelOp ::= ">=" ;
+
+Equal.      RelOp ::= "==" ;
+
+NEqual.     RelOp ::= "!=" ; 
+
+-- COMMENTS --------------------------------------------------------------------
+
+comment     "#" ;
+
+comment     "//" ;
+
+comment     "/*" "*/" ;

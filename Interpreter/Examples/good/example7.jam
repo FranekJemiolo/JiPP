@@ -1,0 +1,11 @@
+main {
+vars:
+    int f(int x) { x += 2; print(x); return x; }
+    int x = 3;
+code:
+    print(f(x));
+    print("\n");
+    print(x);
+    print("\n");
+    print(f(10));
+}

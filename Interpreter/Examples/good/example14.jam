@@ -1,0 +1,17 @@
+/* Example of own exceptions usage */
+
+main {
+    try {
+        Exception("MyException");
+    }
+    catch(e) {
+        if (e == "MyException") {
+            print("OK!\n");
+        }
+        else {
+            Exception("WrongException");
+        }
+        fi
+    }
+    print("Exception handling works!\n");
+}

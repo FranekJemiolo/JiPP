@@ -1,0 +1,4 @@
+/* Not handling exceptions - breaks program */
+main {
+    0/0;
+}

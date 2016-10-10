@@ -1,0 +1,17 @@
+/* Changing value inside for loop */
+main {
+vars:
+    int x = 0;
+code:
+    for (x from 1 to 5) {
+        // This will not cause exception because this does
+        // not change value of x!
+        x = x;
+    }
+    print("OK\n");
+    // This for will cause exception
+    for (x from 1 to 5) {
+        x++;
+    }
+}
+

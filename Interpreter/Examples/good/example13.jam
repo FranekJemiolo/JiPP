@@ -1,0 +1,35 @@
+/* Example of relations operations - they have boolean value not integer.*/
+/* Some operations are for strict int,strings and some for bools.*/
+main {
+vars:
+    int x = 3;
+    int y = 5;
+    string s = "aaa";
+    string s2 = "bb";
+code:
+    if (x <= y) {
+        print(y);
+        print(" is bigger than ");
+        print(x);
+        print("\n");
+    }
+    fi
+    print(x > y);
+    print((x > y) || (x < y));
+    print((x < y) && (x <= y));
+    x = 5;
+    if (x==y) {
+        print ("OK!\n");   
+    }
+    fi
+    if (s < s2) {
+        print("OK!\n");
+    }
+    fi
+    s = s2;
+    if (s == s2) {
+        print("OK\n");
+    }
+    fi
+
+}
